@@ -3,7 +3,6 @@ package bgb.CommonProperties;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -17,7 +16,7 @@ public class BrowserProperties extends BasePage{
 	private final static String CONFIG_FILE_NAME = "BGB/CommonProperties/Dev.properties";;
 	private static Properties pageProperties = new PropertyLoader(CONFIG_FILE_NAME).load();
 
-	
+	@BeforeClass
 	public void getWebdriver()
 	{
 		if(browser==null)

@@ -3,9 +3,6 @@ package bgb.Service.Page;
 import java.util.Properties;
 
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.testng.SkipException;
-
 import Listener.Reporter;
 import bgb.CommonProperties.PropertyLoader;
 import bgb.CommonProperties.BasePage;
