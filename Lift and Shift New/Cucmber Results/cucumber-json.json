@@ -1,0 +1,44 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "Landing a submit meter read page for anonymous",
+        "description": "",
+        "id": "submit-meter-read-for-anonymous-read;landing-a-submit-meter-read-page-for-anonymous",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 62141807150,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I launch the application",
+            "match": {
+              "location": "SubmitMeterReadStep.I_launch_the_application()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "line": 5,
+            "name": "I clicking the SMR button",
+            "keyword": "When "
+          },
+          {
+            "line": 6,
+            "name": "I should verify the submit meter read landing page",
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Submit Meter Read for Anonymous Read",
+    "description": "",
+    "id": "submit-meter-read-for-anonymous-read",
+    "keyword": "Feature",
+    "uri": "SubmitMeterRead.feature"
+  }
+]

@@ -1,0 +1,87 @@
+package bgb.Service.Page;
+
+import java.util.Properties;
+
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.testng.SkipException;
+
+import Listener.Reporter;
+import bgb.CommonProperties.PropertyLoader;
+import bgb.CommonProperties.BasePage;
+
+public class LoginPage extends BasePage{
+	
+	private final static String Login_File = "BGB/CommonProperties/Dev.properties";
+	private static Properties Loginproperties = new PropertyLoader(Login_File).load();
+	
+	private final static String File_Load = "BGB/Service/Properties/LoginPageProperties";
+    private static Properties pageProperties = new PropertyLoader(File_Load).load();
+		
+	
+	public void login_verify() throws Throwable
+	{
+		browserWait(5000);
+		browser.get(Loginproperties.getProperty("Common.BGBURL") + "/business/your-account/login/");
+		Reporter.addScenarioLog("Automation Log");
+		Reporter.addStepLog("Login Page Entered Successfully");	
+	}
+	
+	public void login_to_account_overview()
+	{
+		browserWait(3000);
+		verifyInputByID(pageProperties.getProperty("Login.Username"),"bgbqas02_563@bgdigitaltest.co.uk","User name");
+		verifyInputByID(pageProperties.getProperty("Login.password"),"password12","password");
+		verifyAndClickwithid(pageProperties.getProperty("Login.LoginButton"),"Login Button");
+		
+	}
+	
+	public void enter_username()
+	{
+		browserWait(3000);
+		verifyInputByID(pageProperties.getProperty("Login.Username"),"bgbqas02_563bgdigitaltest.co.uk","User name");
+		
+		verifyInputByID(pageProperties.getProperty("Login.password"),"password","password");
+	}
+
+	public void Error_validation()
+	{
+		String user = "Please check your email address, it doesn't seem right.";
+		String password = "Your password needs to be between 8-32 characters, must contain letters & numbers, may include: ! # % *";
+			
+		String usererror = verifyAndGetTextByXpath(pageProperties.getProperty("Login.usernameerror"));
+		browserWait(3000);
+		
+		System.out.println(usererror);
+		
+		if(user.equals(usererror))
+		{
+			Reporter.addStepLog("Error message ' " +user+ " ' is  successfully matched" );
+			Assert.assertTrue(true);
+			
+	    }
+		else
+		{
+			Reporter.addStepLog("Error message is not matching with the String and Expected is :" +user);
+			Assert.assertTrue(false);
+		
+		}
+		
+		browserWait(1000);
+		verifyAndClickwithid(pageProperties.getProperty("Login.dummyclick"),"");
+		browserWait(1000);
+		String passworderror = verifyAndGetTextByXpath(pageProperties.getProperty("Login.passworderror"));
+		System.out.println(passworderror);
+		browserWait(1000);
+		if(password.equals(passworderror))
+		{
+			Reporter.addStepLog("Error message ' " +password+ " ' is  successfully matched");
+			Assert.assertTrue(true);
+		}
+		else
+		{
+			Reporter.addStepLog("Error message is not matching with the String :" +password);
+			Assert.assertTrue(false);
+		}
+	}
+}
