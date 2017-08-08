@@ -22,7 +22,7 @@ public class LoginPage extends BasePage{
 		browser.get(Loginproperties.getProperty("Common.BGBURL") + "/business/your-account/login/");
 		Reporter.addScenarioLog("Automation Log");
 		Reporter.addStepLog("Login Page Entered Successfully");	
-		Reporter.addScreenCast("C:/Users/473415/git/Lift and Shift New/test-output/ScreenShot");
+		Reporter.addScreenCaptureFromPath("C:/Users/473415/git/Lift and Shift New/test-output/Cucmber-ExtendReport/reportdate1.png", "LoginPage");
 	}
 	
 	public void login_to_account_overview()

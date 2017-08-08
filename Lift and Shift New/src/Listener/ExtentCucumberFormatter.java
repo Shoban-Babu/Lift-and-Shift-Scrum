@@ -80,6 +80,7 @@ public class ExtentCucumberFormatter implements Reporter, Formatter {
 
     static ExtentReports getExtentReport() {
         return extentReports;
+        
     }
 
     public void syntaxError(String state, String event, List<String> legalEvents, String uri,
