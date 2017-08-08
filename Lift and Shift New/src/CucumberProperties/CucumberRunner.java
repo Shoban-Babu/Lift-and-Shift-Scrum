@@ -13,9 +13,9 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features="Feature_File/SubmitMeterRead.feature",
-                  glue={"bgb/Service/StepDefenition"},
+                  glue={"bgb.Service.StepDefenition"},
                   plugin={//"pretty","html:D:/Automation WorkSpace/Lift and Shift New/Lift and Shift New/Cucmber Results/cucumber-json.json",
-                         "Listener.ExtentCucumberFormatter:D:/Automation WorkSpace/Lift and Shift New/Lift and Shift New/test-output/Cucmber-ExtendReport/reportdate.html"},
+                         "Listener.ExtentCucumberFormatter:C:/Users/473415/git/Lift and Shift New/test-output/Cucmber-ExtendReport/reportdate.html"},
                   tags = {"@Errorscenario" }
                    )       		
 public class CucumberRunner {
