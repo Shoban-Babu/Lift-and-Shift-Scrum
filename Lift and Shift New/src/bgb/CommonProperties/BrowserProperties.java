@@ -2,17 +2,15 @@ package bgb.CommonProperties;
 
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-
 import org.junit.BeforeClass;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-
 import bgb.CommonProperties.PropertyLoader;
 import bgb.CommonProperties.BasePage;
 
 public class BrowserProperties extends BasePage{
-	
+
 	private final static String CONFIG_FILE_NAME = "BGB/CommonProperties/Dev.properties";;
 	private static Properties pageProperties = new PropertyLoader(CONFIG_FILE_NAME).load();
 
@@ -53,6 +51,4 @@ public class BrowserProperties extends BasePage{
 		browser.manage().window().maximize();
 		browser.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);		
 	}
-
-
 }
