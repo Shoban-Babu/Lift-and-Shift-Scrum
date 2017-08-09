@@ -3,6 +3,10 @@ package bgb.Service.Page;
 import java.util.Properties;
 
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import Listener.Reporter;
 import bgb.CommonProperties.PropertyLoader;
 import bgb.CommonProperties.BasePage;
@@ -52,7 +56,12 @@ public class LoginPage extends BasePage{
 		
 		System.out.println(usererror);
 		
-		if(user.equals(usererror))
+		new WebDriverWait(browser,2).until(ExpectedConditions.presenceOfElementLocated(By.xpath(pageProperties.getProperty("Login.usernameerror"))));
+		Assert.assertTrue(user+"Message Displayed Successfully", browser.findElement(By.xpath(pageProperties.getProperty("Login.usernameerror"))).getText().contains(user));
+
+		
+		
+		/*if(user.equals(usererror))
 		{
 			Reporter.addStepLog("Error message ' " +user+ " ' is  successfully matched" );
 			Assert.assertTrue(true);
@@ -63,7 +72,7 @@ public class LoginPage extends BasePage{
 			Reporter.addStepLog("Error message is not matching with the String and Expected is :" +user);
 			Assert.assertTrue(false);
 		
-		}
+		}*/
 		
 		browserWait(1000);
 		verifyAndClickwithid(pageProperties.getProperty("Login.dummyclick"),"");

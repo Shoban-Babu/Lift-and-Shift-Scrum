@@ -18,10 +18,11 @@ import java.net.URL;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
+/*
  * A cucumber based reporting listener which generates the Extent Report
  */
-public class ExtentCucumberFormatter implements Reporter, Formatter {
+
+    public class ExtentCucumberFormatter implements Reporter, Formatter {
     private static ExtentReports extentReports;
     private static ExtentHtmlReporter htmlReporter;
     private static ThreadLocal<ExtentTest> featureTestThreadLocal = new InheritableThreadLocal<>();
@@ -74,18 +75,17 @@ public class ExtentCucumberFormatter implements Reporter, Formatter {
             } catch (MalformedURLException e) {
                 throw new IllegalArgumentException("Invalid ExtentX Server URL", e);
             }
+            
         }
         extentReports.attachReporter(htmlReporter);
     }
 
     static ExtentReports getExtentReport() {
         return extentReports;
-        
     }
 
     public void syntaxError(String state, String event, List<String> legalEvents, String uri,
         Integer line) {
-
     }
 
     public void uri(String uri) {
