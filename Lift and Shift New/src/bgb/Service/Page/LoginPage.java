@@ -35,7 +35,6 @@ public class LoginPage extends BasePage{
 		verifyInputByID(pageProperties.getProperty("Login.Username"),"bgbqas02_563@bgdigitaltest.co.uk","User name");
 		verifyInputByID(pageProperties.getProperty("Login.password"),"password12","password");
 		verifyAndClickwithid(pageProperties.getProperty("Login.LoginButton"),"Login Button");
-		System.out.println("Hell0 hi");
 		
 	}
 	
