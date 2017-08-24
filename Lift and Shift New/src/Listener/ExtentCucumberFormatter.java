@@ -1,5 +1,6 @@
 package Listener;
 
+import com.aventstack.extentreports.ExtentReporter;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.GherkinKeyword;
@@ -12,17 +13,26 @@ import gherkin.formatter.Reporter;
 import gherkin.formatter.model.*;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+
+import bgb.CommonProperties.BasePage;
+
 /*
  * A cucumber based reporting listener which generates the Extent Report
  */
 
     public class ExtentCucumberFormatter implements Reporter, Formatter {
+    	
+    static String Desr;
     private static ExtentReports extentReports;
     private static ExtentHtmlReporter htmlReporter;
     private static ThreadLocal<ExtentTest> featureTestThreadLocal = new InheritableThreadLocal<>();
@@ -238,7 +248,19 @@ import java.util.List;
 
         stepTestThreadLocal.set(stepTest);
     }
-
+    
+    public String Screenshot(String Name) throws IOException
+    {
+    	
+    	TakesScreenshot takescreenshot = (TakesScreenshot)BasePage.browser;
+    	File scr = takescreenshot.getScreenshotAs(OutputType.FILE);
+    	Desr = System.getProperty("C:/Users/473415/git/Lift and Shift New/Screenshot/new.png");
+    	File destination = new File(Desr);
+    	FileUtils.copyFile(scr, destination);
+    	return Desr;
+    }
+    
+    
     public void embedding(String mimeType, byte[] data) {
 
     }

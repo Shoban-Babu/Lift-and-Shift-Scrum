@@ -14,11 +14,13 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(features="Feature_File/SubmitMeterRead.feature",
                   glue={"bgb.Service.StepDefenition"},
-                  plugin={//"pretty","html:D:/Automation WorkSpace/Lift and Shift New/Lift and Shift New/Cucmber Results/cucumber-json.json",
+                  plugin={"pretty","html:D:/Automation WorkSpace/Lift and Shift New/Lift and Shift New/Cucmber Results/cucumber-html-report",
                          "Listener.ExtentCucumberFormatter:C:/Users/473415/git/Lift and Shift New/test-output/Cucmber-ExtendReport/reportdate.html"},
-                  tags = {"@Errorscenario" }
-                   )       		
+                  tags = {"@current" }
+                   )      
+
 public class CucumberRunner {
+	
 	
 	private final static String CONFIG_FILE_NAME = "BGB/CommonProperties/Dev.properties";;
 	private static Properties pageProperties = new PropertyLoader(CONFIG_FILE_NAME).load();

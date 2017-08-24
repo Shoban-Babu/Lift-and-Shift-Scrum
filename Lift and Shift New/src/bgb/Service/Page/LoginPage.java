@@ -23,7 +23,7 @@ public class LoginPage extends BasePage{
 	public void login_verify() throws Throwable
 	{
 		browserWait(5000);
-		browser.get(Loginproperties.getProperty("Common.BGBURL") + "/business/your-account/login/");
+		browser.get(Loginproperties.getProperty("Common.BGBURL") + "/business/login/");
 		Reporter.addScenarioLog("Automation Log");
 		Reporter.addStepLog("Login Page Entered Successfully");	
 		Reporter.addScreenCaptureFromPath("C:/Users/473415/git/Lift and Shift New/test-output/Cucmber-ExtendReport/reportdate1.png", "LoginPage");
@@ -31,10 +31,10 @@ public class LoginPage extends BasePage{
 	
 	public void login_to_account_overview()
 	{
-		browserWait(3000);
-		verifyInputByID(pageProperties.getProperty("Login.Username"),"bgbqas02_563@bgdigitaltest.co.uk","User name");
-		verifyInputByID(pageProperties.getProperty("Login.password"),"password12","password");
-		verifyAndClickwithid(pageProperties.getProperty("Login.LoginButton"),"Login Button");
+		browserWait(8000);
+		verifyInputByXpath(pageProperties.getProperty("Login.Username"),"bgbqas02_563@bgdigitaltest.co.uk","User name");
+		verifyInputByXpath(pageProperties.getProperty("Login.password"),"password12","password");
+		verifyAndClickwithXpath(pageProperties.getProperty("Login.LoginButton"),"Login Button");
 		
 	}
 	
@@ -44,6 +44,9 @@ public class LoginPage extends BasePage{
 		verifyInputByID(pageProperties.getProperty("Login.Username"),"bgbqas02_563bgdigitaltest.co.uk","User name");
 		
 		verifyInputByID(pageProperties.getProperty("Login.password"),"password","password");
+		
+		Assert.assertTrue("Hello", browser.findElement(By.id(pageProperties.getProperty("Login.password"))).isDisplayed());
+		System.out.println("AssertDone");
 	}
 
 	public void Error_validation()
@@ -58,8 +61,7 @@ public class LoginPage extends BasePage{
 		
 		new WebDriverWait(browser,2).until(ExpectedConditions.presenceOfElementLocated(By.xpath(pageProperties.getProperty("Login.usernameerror"))));
 		Assert.assertTrue(user+"Message Displayed Successfully", browser.findElement(By.xpath(pageProperties.getProperty("Login.usernameerror"))).getText().contains(user));
-
-		
+	
 		
 		/*if(user.equals(usererror))
 		{

@@ -102,6 +102,7 @@ public class Reporter {
      * @throws IOException Exception if imagePath is erroneous
      */
     public static void addScreenCast(String screenCastPath) throws IOException {
+    	
         getCurrentStep().addScreencastFromPath(screenCastPath);
     }
 
@@ -139,7 +140,8 @@ public class Reporter {
     public static void setTestRunnerOutput(String outputMessage) {
         getExtentReport().setTestRunnerOutput(outputMessage);
     }
-
+    
+   
     /**
      * Sets the author name for the current scenario
      * @param authorName The author name of the current scenario
