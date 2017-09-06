@@ -1,5 +1,6 @@
 package bgb.Service.Page;
 
+import java.io.IOException;
 import java.util.Properties;
 
 import org.junit.Assert;
@@ -34,6 +35,7 @@ public class SubmitMeterReadPage extends BasePage
 	{
 		browserWait(5000);
 		verifyAndClickwithXpath(SMRproperties.getProperty("SMR.Link"),"Submit Meter Read Link");
+		
 	}
 	
 	public void verify_SMR_Page()
@@ -42,9 +44,10 @@ public class SubmitMeterReadPage extends BasePage
 		System.out.println("i in SMR page");
 	}
 	
-	public void navigate_to_SMR()
+	public void navigate_to_SMR() throws IOException
 	{
 		browser.get(pageProperties.getProperty("Common.BGBURL")+"/business/meter-read/business-submit-meter-read");
+		VerifyAndTakeScreenshot("SMR Home Page");
 	}
 	
 	public void verify_smr_page_title()
@@ -58,12 +61,13 @@ public class SubmitMeterReadPage extends BasePage
 		
 	}
 	
-	public void enter_smr_deatils(String accountno,String postcode,String email)
+	public void enter_smr_deatils(String accountno,String postcode,String email) throws IOException
 	{
 		verifyInputByName(SMRproperties.getProperty("SMR.EmailId"),email,"Email ID");
 		verifyInputByName(SMRproperties.getProperty("SMR.AccountNumber"),accountno,"Account Number");
 		verifyInputByName(SMRproperties.getProperty("SMR.PostCode"),postcode,"Post Code");
 		Reporter.addStepLog("SMR Details Entered Successfully");
+		VerifyAndTakeScreenshot("Submit Meter Details Entered");
 	}
 	
 	public void Click_On_next_button()
@@ -99,7 +103,7 @@ public class SubmitMeterReadPage extends BasePage
 		Assert.assertTrue(browser.findElement(By.xpath(SMRproperties.getProperty("SMR.postcodeerrormessage"))).getText().contains("Please enter a valid postcode"));
 	}
 	
-	public void verify_meter_details_page()
+	public void verify_meter_details_page() throws IOException
 	{
 		browserWait(3000);
 		verifyIsElementVisibleWithId(SMRproperties.getProperty("SMR.step2"),"Step Two Details");
@@ -107,6 +111,7 @@ public class SubmitMeterReadPage extends BasePage
 		verifyAndGetTextByXpath(SMRproperties.getProperty("SMR.MeterSerialNumber"));
 		verifyAndGetTextByXpath(SMRproperties.getProperty("SMR.EstimationDate"));
 		verifyIsElementVisibleWithXpath(SMRproperties.getProperty("SMR.DatePicker"),"DatePicker");
+		VerifyAndTakeScreenshot("SMR Home Meter Details page Step 2");
 		
 	}
 	
@@ -117,6 +122,7 @@ public class SubmitMeterReadPage extends BasePage
 			browserWait(2000);
 			verifyAndClickwithXpath(SMRproperties.getProperty("SMR.DatePicker"),"Date Picker");
 			
+			Assert.assertTrue(browser.findElement(By.xpath(SMRproperties.getProperty("SMR.PrevoiusMonth"))).isDisplayed());
 			for(int y=0;y<=3;y++)
 			{
 				browser.findElement(By.xpath(SMRproperties.getProperty("SMR.PrevoiusMonth"))).click();
@@ -221,7 +227,7 @@ public class SubmitMeterReadPage extends BasePage
 	
 	//get meter reading from existing meter
 	
-	public String get_meter_multi_register_count()
+	public String get_meter_multi_register_count() throws IOException
 	{
 		new_register_count();
 		
@@ -253,10 +259,12 @@ public class SubmitMeterReadPage extends BasePage
 		    concatmeterread= "";
 		}
 		}
+		
 		catch (Exception e)
 		{
 			
 		}
+		VerifyAndTakeScreenshot("SMR Meter Deatils Submitted");
 		return concatmeterread;
 	}
 	
@@ -307,7 +315,7 @@ public class SubmitMeterReadPage extends BasePage
 	
 	/*Multiple meter Code*/
 	
-	public String get_Dialscount_multimeter()
+	public String get_Dialscount_multimeter() throws IOException
 	{
 		for(loop=4;loop<20;loop++)
 		{
@@ -318,6 +326,8 @@ public class SubmitMeterReadPage extends BasePage
 			loop = loop + 3;
 			System.out.println(loop+"Current loop is");
 		}
+		
+		VerifyAndTakeScreenshot("SMR Meter Deatils Submitted");
 		return null;
 	}
 	

@@ -1,12 +1,16 @@
 package bgb.CommonProperties;
 
+import java.io.File;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
-import org.junit.BeforeClass;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -16,6 +20,7 @@ import Listener.Reporter;
 
 public class BasePage {
 	
+	 public static String Desr;
 	public static WebDriver browser = null;
 	public static String reportdate;
 	
@@ -205,6 +210,17 @@ public class BasePage {
 			
 		}
 	}
+	
+	 public void VerifyAndTakeScreenshot(String name) throws IOException
+	    {
+	    	TakesScreenshot takescreenshot = (TakesScreenshot)BasePage.browser;
+	    	File scr = takescreenshot.getScreenshotAs(OutputType.FILE);
+	    	Desr = "C:/Users/473415/git/Lift and Shift New/Screenshot/"+name+".png";
+	    	File destination = new File(Desr);
+	    	FileUtils.copyFile(scr, destination);
+	    	Reporter.addScreenCaptureFromPath(Desr, name);
+	    }
+	    
 	
 	
 }

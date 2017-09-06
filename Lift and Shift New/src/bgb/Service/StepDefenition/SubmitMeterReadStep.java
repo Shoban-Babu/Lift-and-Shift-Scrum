@@ -3,6 +3,9 @@ package bgb.Service.StepDefenition;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+
+import java.io.IOException;
+
 import bgb.Service.Page.LoginPage;
 import bgb.Service.Page.SubmitMeterReadPage;
 
@@ -42,7 +45,7 @@ public class SubmitMeterReadStep{
 	}	   
 	
 	@Given("^I should navigate to the SMR page$")
-	public void navigate_to_SMR_Anonympus()
+	public void navigate_to_SMR_Anonympus() throws IOException
 	{
 		SubmitMeterReadPage smr = new SubmitMeterReadPage();
 		smr.navigate_to_SMR();
@@ -50,7 +53,7 @@ public class SubmitMeterReadStep{
 	}
 
 	@When("^I should enter the account number as \"([^\"]*)\" ,postcode as \"([^\"]*)\" and email address as \"([^\"]*)\"$")
-	public void enter_smr_details(String accountno,String postcode,String email)
+	public void enter_smr_details(String accountno,String postcode,String email) throws IOException
 	{
 		SubmitMeterReadPage smr = new SubmitMeterReadPage();
 		smr.verify_smr_page_title();
@@ -85,7 +88,7 @@ public class SubmitMeterReadStep{
 	}
 	
 	@Then("^I should verify UI of meter deatils$")
-	public static void verify_meter_details_step()
+	public static void verify_meter_details_step() throws IOException
 	{
 		SubmitMeterReadPage smr = new SubmitMeterReadPage();
 		smr.verify_meter_details_page();
@@ -95,7 +98,7 @@ public class SubmitMeterReadStep{
 	
 	@Then("I should submit the meter read for Single Registers$")
 	
-	public static void Submit_meter_read_SingleRegister()
+	public static void Submit_meter_read_SingleRegister() throws IOException
 	{
 		
 	SubmitMeterReadPage smr = new SubmitMeterReadPage();
@@ -106,7 +109,7 @@ public class SubmitMeterReadStep{
 	
    @Then("I should submit the meter for Multiple Registers$")
 	
-	public static void Submit_meter_read_MultipleRegister()
+	public static void Submit_meter_read_MultipleRegister() throws IOException
 	{
 		
 	SubmitMeterReadPage smr = new SubmitMeterReadPage();
@@ -117,7 +120,7 @@ public class SubmitMeterReadStep{
    
    @Then("I should submit the meter for Multiple Meter$")
 	
-	public static void Submit_meter_read_MultiMeter()
+	public static void Submit_meter_read_MultiMeter() throws IOException
 	{
 		
 	SubmitMeterReadPage smr = new SubmitMeterReadPage();
