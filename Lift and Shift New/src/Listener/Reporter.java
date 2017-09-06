@@ -60,6 +60,7 @@ public class Reporter {
      * Adds an info message to the current step
      *
      * @param message The message to be logged to the current step
+     * @return 
      */
     public static void addStepLog(String message) {
         getCurrentStep().info(message);

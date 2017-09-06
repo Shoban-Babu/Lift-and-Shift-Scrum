@@ -16,7 +16,7 @@ import cucumber.api.junit.Cucumber;
                   glue={"bgb.Service.StepDefenition"},
                   plugin={"pretty","html:D:/Automation WorkSpace/Lift and Shift New/Lift and Shift New/Cucmber Results/cucumber-html-report",
                          "Listener.ExtentCucumberFormatter:C:/Users/473415/git/Lift and Shift New/test-output/Cucmber-ExtendReport/reportdate.html"},
-                  tags = {"@current" }
+                  tags = {"@MultiRegister"}
                    )      
 
 public class CucumberRunner {

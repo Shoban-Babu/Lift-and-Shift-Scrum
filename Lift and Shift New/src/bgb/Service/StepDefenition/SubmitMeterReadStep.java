@@ -41,6 +41,89 @@ public class SubmitMeterReadStep{
 		smr.verify_SMR_Page();
 	}	   
 	
+	@Given("^I should navigate to the SMR page$")
+	public void navigate_to_SMR_Anonympus()
+	{
+		SubmitMeterReadPage smr = new SubmitMeterReadPage();
+		smr.navigate_to_SMR();
 		
+	}
+
+	@When("^I should enter the account number as \"([^\"]*)\" ,postcode as \"([^\"]*)\" and email address as \"([^\"]*)\"$")
+	public void enter_smr_details(String accountno,String postcode,String email)
+	{
+		SubmitMeterReadPage smr = new SubmitMeterReadPage();
+		smr.verify_smr_page_title();
+		smr.enter_smr_deatils(accountno, postcode, email);
+		smr.Click_On_next_button();
+		
+	}
+
+	@Then("^I click on next button$") 
+	public void Click_on_next_buton()
 	
+	{
+		SubmitMeterReadPage smr = new SubmitMeterReadPage();
+		smr.Click_On_next_button();
+	}
+	
+	@Then("^I should verify UI error message$") 
+	public static void SMR_Error_Message_step1()
+	
+	{
+		SubmitMeterReadPage smr = new SubmitMeterReadPage();	 
+		smr.error_message_validation_step1();
+		
+	}
+	
+	@Then("^I should verify UI error message with invalid deatils$") 
+	public static void error_message_validation_invalid()
+	
+	{
+		SubmitMeterReadPage smr = new SubmitMeterReadPage();	 
+		smr.error_message_validation_invalid();
+	}
+	
+	@Then("^I should verify UI of meter deatils$")
+	public static void verify_meter_details_step()
+	{
+		SubmitMeterReadPage smr = new SubmitMeterReadPage();
+		smr.verify_meter_details_page();
+		
+	}
+	
+	
+	@Then("I should submit the meter read for Single Registers$")
+	
+	public static void Submit_meter_read_SingleRegister()
+	{
+		
+	SubmitMeterReadPage smr = new SubmitMeterReadPage();
+	smr.Date_Picker_Fuctionality();
+	smr.get_meter_multi_register_count();		
+	
+	}
+	
+   @Then("I should submit the meter for Multiple Registers$")
+	
+	public static void Submit_meter_read_MultipleRegister()
+	{
+		
+	SubmitMeterReadPage smr = new SubmitMeterReadPage();
+	smr.Date_Picker_Fuctionality();
+	smr.get_meter_multi_register_count();		
+	
+	}
+   
+   @Then("I should submit the meter for Multiple Meter$")
+	
+	public static void Submit_meter_read_MultiMeter()
+	{
+		
+	SubmitMeterReadPage smr = new SubmitMeterReadPage();
+	smr.Date_Picker_Fuctionality();
+	smr.get_Dialscount_multimeter();		
+	
+	}
+
 }

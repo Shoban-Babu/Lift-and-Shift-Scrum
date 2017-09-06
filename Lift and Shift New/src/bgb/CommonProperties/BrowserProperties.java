@@ -14,7 +14,7 @@ public class BrowserProperties extends BasePage{
 	private final static String CONFIG_FILE_NAME = "BGB/CommonProperties/Dev.properties";;
 	private static Properties pageProperties = new PropertyLoader(CONFIG_FILE_NAME).load();
 
-	@BeforeClass
+/*	@BeforeClass*/
 	public void getWebdriver()
 	{
 		if(browser==null)

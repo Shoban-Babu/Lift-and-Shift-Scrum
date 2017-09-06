@@ -46,7 +46,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Aug 24, 2017 05:56:03 PM</span>
+                    <span class='label suite-start-time blue darken-3'>Sep 6, 2017 12:21:13 PM</span>
 				</a>
 			</li>
 			<li>
@@ -84,7 +84,7 @@
 					<i class='material-icons'>local_offer</i> Category
 				</a>
 				<ul id='category-toggle' class='dropdown-content'>
-					<li><a href='#'>@current</a></li>
+					<li><a href='#'>@MultiRegister</a></li>
 					<li class='divider'></li>
 					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
 				</ul>
@@ -182,49 +182,52 @@
 				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>Submit Meter Read for Anonymous Read</span>
-						<span class='test-time'>Aug 24, 2017 05:56:04 PM</span>
+						<span class='test-time'>Sep 6, 2017 12:21:13 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='scenario node' test-id='2' status='pass'>
 	<div class='category-list'>
-		<span class='category label white-text'>@current</span>
+		<span class='category label white-text'>@MultiRegister</span>
 	</div>
-	<span class='duration right label'>0h 0m 37s+334ms</span>
+	<span class='duration right label'>0h 0m 44s+380ms</span>
 	<div class='desc'>
 		<b>Scenario</b>
-		<span class="desc-text">Landing a submit meter read page for anonymous</span>
+		<span class="desc-text">To validate that if the customer is getting meter read deatils when giving valid deatils for Multiple Registers</span>
 	</div>
 	<ul class='steps'>
 		<li test-id='3' class='node given pass' status='pass'>
 			
 			<b>Given</b>
 			
-			<span class="bdd-step-name">Given I launch the application</span>
-			<ul class='screenshots right'>
-				<li><a data-featherlight="image" href="C:/Users/473415/git/Lift and Shift New/test-output/Cucmber-ExtendReport/reportdate1.png"><i class='material-icons'>panorama</i></a></li>
-			</ul>
-				<div class='pre'>Login Page Entered Successfully</div>
+			<span class="bdd-step-name">Given I should navigate to the SMR page</span>
 				<div class='pre'>passed</div>
 			
 		</li>
-		<li test-id='4' class='node given pass' status='pass'>
-			
-			<b>Given</b>
-			
-			<span class="bdd-step-name">Given I am login with the credentials</span>
-				<div class='pre'>User name entered successfully</div>
-				<div class='pre'>password entered successfully</div>
-				<div class='pre'>Login Button clicked successfully</div>
-				<div class='pre'>passed</div>
-			
-		</li>
-		<li test-id='5' class='node when pass' status='pass'>
+		<li test-id='4' class='node when pass' status='pass'>
 			
 			<b>When</b>
 			
-			<span class="bdd-step-name">When I should navigate to account summary page</span>
-				<div class='pre'>Submit Meter Read Link clicked successfully</div>
+			<span class="bdd-step-name">When I should enter the account number as "601427617" ,postcode as "DT3 5DZ" and email address as "shobanbabasdeu.manohar@cognizant.com"</span>
+				<div class='pre'>Submit Meter read Page Title is matched with String</div>
+				<div class='pre'>Email ID entered successfully</div>
+				<div class='pre'>Account Number entered successfully</div>
+				<div class='pre'>Post Code entered successfully</div>
+				<div class='pre'>SMR Details Entered Successfully</div>
+				<div class='pre'>Next Button clicked successfully</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='5' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then I should verify UI of meter deatils</span>
+				<div class='pre'>Step Two Details is displayed successfully in the application</div>
+				<div class='pre'>Account number: 601427617  is Displayed SuccessFully</div>
+				<div class='pre'>Meter serial number: L07C15183  is Displayed SuccessFully</div>
+				<div class='pre'>Estimated reading on 30 November 2016  is Displayed SuccessFully</div>
+				<div class='pre'>DatePicker is displayed successfully in the application</div>
 				<div class='pre'>passed</div>
 			
 		</li>
@@ -232,7 +235,17 @@
 			
 			<b>Then</b>
 			
-			<span class="bdd-step-name">Then I should verify the submit meter read landing page</span>
+			<span class="bdd-step-name">Then I should submit the meter for Multiple Registers</span>
+				<div class='pre'>Date Picker clicked successfully</div>
+				<div class='pre'>5 Dials are displayed in the application</div>
+				<div class='pre'>5  Input dials are displayed in the application</div>
+				<div class='pre'>Previous Meter Read for Register 1 is:28961</div>
+				<div class='pre'>Updated Meter Read for Register 1 is28962</div>
+				<div class='pre'>Dials count and Input Dials are matched</div>
+				<div class='pre'>5  Input dials are displayed in the application</div>
+				<div class='pre'>Previous Meter Read for Register 2 is:45910</div>
+				<div class='pre'>Updated Meter Read for Register 2 is45911</div>
+				<div class='pre'>Dials count and Input Dials are matched</div>
 				<div class='pre'>passed</div>
 			
 		</li>
@@ -292,7 +305,7 @@
 				
 				<li class='category displayed active'>
 					<div class='category-heading'>
-						<span class='category-name'>@current</span>
+						<span class='category-name'>@MultiRegister</span>
 						<span class='category-status right'>
 							<span class='label pass'>1</span>
 						</span>
@@ -315,8 +328,8 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Aug 24, 2017 05:56:04 PM</td>
-										<td class='linked' test-id='2'>Submit Meter Read for Anonymous Read.Landing a submit meter read page for anonymous</td>
+										<td>Sep 6, 2017 12:21:13 PM</td>
+										<td class='linked' test-id='2'>Submit Meter Read for Anonymous Read.To validate that if the customer is getting meter read deatils when giving valid deatils for Multiple Registers</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 								</tbody>
@@ -363,19 +376,19 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Aug 24, 2017 05:56:03 PM</div>
+					<div class='panel-lead'>Sep 6, 2017 12:21:13 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Aug 24, 2017 05:56:42 PM</div>
+			 		<div class='panel-lead'>Sep 6, 2017 12:21:57 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>39,378ms</div>
+					<div class='panel-lead'>44,594ms</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -430,7 +443,7 @@
 							<th>Others</th>
 						</tr>
 						<tr>
-							<td>@current</td>
+							<td>@MultiRegister</td>
 							<td>1</td>
 							<td>0</td>
 							<td>0</td>
