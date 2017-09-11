@@ -48,3 +48,4 @@ SMR.MultiMeterReadCount = .//*[@id="meter-read"]/div[2]/div/div[3]/div/div/div/d
 SMR.multiMeterInputReadCount = //*[@id='meter-read']/div[2]/div/div[3]/div/div/div/div/div[Dcount]//*[@class='meter-register']/div/div
 SMR.multiMterInputValues1 = //*[@id='meter-read']/div[2]/div/div[3]/div/div/div/div/div[tag]
 SMR.multiMterInputValues2 = //*[@class='meter-register']/div/div//input[@data-test-dial='num']
+SMR.DatePickermultiMeter = //div[num][@class="row m-0"]/input

@@ -53,7 +53,7 @@ Then I should submit the meter read for Single Registers
 Scenario: To validate that if the customer is getting meter read deatils when giving valid deatils for Multiple Registers
 
 Given I should navigate to the SMR page 
-When I should enter the account number as "601427617" ,postcode as "DT3 5DZ" and email address as "shobanbabasdeu.manohar@cognizant.com"
+When I should enter the account number as "600712768" ,postcode as "EX33 2BJ" and email address as "shobanbabasdeu.manohar@cognizant.com"
 Then I should verify UI of meter deatils
 Then I should submit the meter for Multiple Registers
 

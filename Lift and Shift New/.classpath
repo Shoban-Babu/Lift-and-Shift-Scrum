@@ -22,6 +22,8 @@
 	<classpathentry kind="lib" path="D:/FireFox - Selenium Add -Ons/Cucumber Addons/Cucumber New  working jars/Set1/ojdbc14.jar"/>
 	<classpathentry kind="lib" path="D:/FireFox - Selenium Add -Ons/Cucumber Addons/Cucumber New  working jars/Set1/spring-2.5.6.jar"/>
 	<classpathentry kind="lib" path="D:/FireFox - Selenium Add -Ons/Cucumber Addons/Cucumber New  working jars/Set1/sqljdbc4.jar"/>
-	<classpathentry kind="lib" path="D:/FireFox - Selenium Add -Ons/Cucumber Addons/Cucumber New  working jars/Set1/selenium-server-standalone-3.4.0 (1).jar"/>
+	<classpathentry kind="lib" path="D:/FireFox - Selenium Add -Ons/lib/testng-6.8.jar"/>
+	<classpathentry kind="lib" path="D:/FireFox - Selenium Add -Ons/selenium-html-runner-3.5.3.jar"/>
+	<classpathentry kind="lib" path="D:/FireFox - Selenium Add -Ons/selenium-server-standalone-3.5.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

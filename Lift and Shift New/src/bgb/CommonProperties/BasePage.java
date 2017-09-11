@@ -16,6 +16,7 @@ import org.openqa.selenium.WebElement;
 
 
 import Listener.Reporter;
+import CucumberProperties.CucumberRunner;
 
 
 public class BasePage {
@@ -215,7 +216,7 @@ public class BasePage {
 	    {
 	    	TakesScreenshot takescreenshot = (TakesScreenshot)BasePage.browser;
 	    	File scr = takescreenshot.getScreenshotAs(OutputType.FILE);
-	    	Desr = "C:/Users/473415/git/Lift and Shift New/Screenshot/"+name+".png";
+	    	Desr = CucumberRunner.path1 + "/" +name +".png";
 	    	File destination = new File(Desr);
 	    	FileUtils.copyFile(scr, destination);
 	    	Reporter.addScreenCaptureFromPath(Desr, name);

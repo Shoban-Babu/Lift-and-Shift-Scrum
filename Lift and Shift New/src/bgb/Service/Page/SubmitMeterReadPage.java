@@ -115,9 +115,11 @@ public class SubmitMeterReadPage extends BasePage
 		
 	}
 	
-	//Date picker functionality to select the date
+//Date picker functionality to select the date
 		public void Date_Picker_Fuctionality()
 		{
+			
+			try{
 			
 			browserWait(2000);
 			verifyAndClickwithXpath(SMRproperties.getProperty("SMR.DatePicker"),"Date Picker");
@@ -128,10 +130,33 @@ public class SubmitMeterReadPage extends BasePage
 				browser.findElement(By.xpath(SMRproperties.getProperty("SMR.PrevoiusMonth"))).click();
 			}
 			browserWait(2000);
+			}
+			catch(Exception e)
+			{
+				
+			}
+			
 			calender_Funtions();
 		}
 		
-		// Date picker using rows and columns
+		public void Date_Picker_Fuctionality_MultiMeter()
+		{
+			loop = loop +1;
+			browserWait(2000);
+			System.out.println(loop);
+			verifyAndClickwithXpath(SMRproperties.getProperty("SMR.DatePickermultiMeter").replaceAll("num", ""+loop),"Date Picker");
+			browserWait(1000);
+			Assert.assertTrue(browser.findElement(By.xpath(SMRproperties.getProperty("SMR.PrevoiusMonth"))).isDisplayed());
+			for(int y=0;y<=3;y++)
+			{
+				browser.findElement(By.xpath(SMRproperties.getProperty("SMR.PrevoiusMonth"))).click();
+			}
+			browserWait(2000);
+			calender_Funtions();
+		    loop = loop-1;
+		}
+		
+  // Date picker using rows and columns
 		public void calender_Funtions()
 		{
 			int rows = VerifyAndGetTableRows(SMRproperties.getProperty("SMR.DateTableCount"));
@@ -255,6 +280,7 @@ public class SubmitMeterReadPage extends BasePage
 		    System.out.println("Previous meter read with concatination:"+concatmeterread);
 		    String temoptxt = concatmeterread;
 		    System.out.println("Current Meter read"+temoptxt);
+		    
 		    enter_into_Dials(temoptxt);
 		    concatmeterread= "";
 		}
@@ -288,7 +314,8 @@ public class SubmitMeterReadPage extends BasePage
 				System.out.println(DialCount+"Input DialsCount");
 				String previousmeterread = temoptxt;
 				System.out.println("Previous Meter read before adding value " +previousmeterread);
-				previousmeterread = (Integer.parseInt(previousmeterread)+1)+"";
+				previousmeterread =  (Integer.parseInt(previousmeterread)+1)+"";
+				previousmeterread = pad_Zeros(previousmeterread, DialCount);
 				System.out.println("Updated meter read "+previousmeterread);
 				Reporter.addStepLog("Previous Meter Read for Register "+m+ " is:" +temoptxt);
 				Reporter.addStepLog("Updated Meter Read for Register " +m+ " is"+ previousmeterread);
@@ -317,14 +344,16 @@ public class SubmitMeterReadPage extends BasePage
 	
 	public String get_Dialscount_multimeter() throws IOException
 	{
-		for(loop=4;loop<20;loop++)
+		for(loop=4;loop<=12;)
 		{
+			System.out.println(loop+"Current loop is");
 			count = VerifyAndGetCountWithXpath(SMRproperties.getProperty("SMR.MultiMeterReadCount").replaceAll("Dcount", ""+loop), "Dials Count");
 			System.out.println("Dials Count Displayed is :"+count);
+			Date_Picker_Fuctionality_MultiMeter();
 			get_multi_Meter_Previous_read();
 			enter_multi_meter_read();
-			loop = loop + 3;
-			System.out.println(loop+"Current loop is");
+			loop = loop + 2;
+			System.out.println(loop+"Updated loop is");
 		}
 		
 		VerifyAndTakeScreenshot("SMR Meter Deatils Submitted");
@@ -359,10 +388,11 @@ public class SubmitMeterReadPage extends BasePage
 		
 		String previousmeterread = Temp;
 		previousmeterread = (Integer.parseInt(previousmeterread)+1)+"";
+		previousmeterread = pad_Zeros(previousmeterread, DialsCount);
 		System.out.println("Updated meter read:"+previousmeterread);
 		int update = previousmeterread.length();
-		if(!(DialsCount == update))
-		{
+		Assert.assertEquals(DialsCount, update);
+		
 			for(int i=0;i<DialsCount;i++)
 			{
 				
@@ -372,7 +402,24 @@ public class SubmitMeterReadPage extends BasePage
 				//System.out.println(concat);
 				browser.findElement(By.xpath(concat)).sendKeys(previousmeterread.substring(i));
 			}
+		
+		
+	}
+	
+	
+	//Padding Zeros
+	
+	public String pad_Zeros(String previousmeterread, int Dialscount)
+	{
+		
+		for(int i = previousmeterread.length();i<Dialscount;i++)
+		{
+			System.out.println("I am In for padding the Zeros");
+		    previousmeterread = "0" + previousmeterread;
+		    System.out.println("+++++++++++++++++++++++++++++++++"+previousmeterread);
 		}
+		
+		return previousmeterread;
 		
 	}
 	

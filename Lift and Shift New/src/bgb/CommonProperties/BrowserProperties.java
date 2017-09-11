@@ -3,9 +3,14 @@ package bgb.CommonProperties;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import org.junit.BeforeClass;
+import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
 import bgb.CommonProperties.PropertyLoader;
 import bgb.CommonProperties.BasePage;
 
@@ -23,14 +28,18 @@ public class BrowserProperties extends BasePage{
 			if(pageProperties.getProperty("Common.browser").equalsIgnoreCase("firefox"))
 			{
 				System.out.println("I am in For Webdriver Firefox");
-				browser =new FirefoxDriver();
+				System.setProperty("webdriver.gecko.driver", "D://FireFox - Selenium Add -Ons//Drivers//geckodriver.exe");
+				
+				DesiredCapabilities dc = DesiredCapabilities.firefox();
+				dc.setCapability("marionette", true);
+				browser =new FirefoxDriver(dc);
 				browser_operations();
 				browser.get(pageProperties.getProperty("Common.BGBURL"));
 			}
 			
 			else if(pageProperties.getProperty("Common.browser").equalsIgnoreCase("Chrome"))
 			{
-				System.setProperty("webdriver.chrome.driver", "D://FireFox - Selenium Add -Ons//chromedriver.exe");
+				System.setProperty("webdriver.chrome.driver", "D://FireFox - Selenium Add -Ons//Drivers//chromedriver.exe");
 				browser =new ChromeDriver();
 				browser_operations();
 				browser.get(pageProperties.getProperty("Common.BGBURL"));
@@ -38,10 +47,17 @@ public class BrowserProperties extends BasePage{
 			
 			else if(pageProperties.getProperty("Common.browser").equalsIgnoreCase("IE"))
 			{
-				System.setProperty("webdriver.ie.driver", "D://FireFox - Selenium Add -Ons//chromedriver.exe");
+				System.setProperty("webdriver.ie.driver", "D://FireFox - Selenium Add -Ons//Drivers//IEDriverServer.exe");
+/*				DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
+		        capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);*/
+		        
+		        /*DesiredCapabilities ieCapabilities = DesiredCapabilities.internetExplorer();
+	            ieCapabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,true);*/
+				
 				browser =new InternetExplorerDriver();
 				browser_operations();
 				browser.get(pageProperties.getProperty("Common.BGBURL"));
+				browser.findElement(By.id("overridelink")).click();
 			}
 		}
 	}
