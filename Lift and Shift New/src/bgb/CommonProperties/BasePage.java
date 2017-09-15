@@ -200,7 +200,7 @@ public class BasePage {
 	}
 	
 	
-	public void browserWait(int WaitTime)
+	public static void browserWait(int WaitTime)
 	{
 		try
 		{

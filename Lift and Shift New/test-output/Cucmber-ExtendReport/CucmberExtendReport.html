@@ -32,7 +32,6 @@
 		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
 			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
 						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
-			<li class='waves-effect'><a href='#!' view='exception-view' onclick="configureView(2)"><i class='material-icons'>bug_report</i></a></li>
 			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
 			<li class='waves-effect'><a href='#!' onclick="configureView(-1)" view='testrunner-logs-view'><i class='material-icons'>note</i></a></li>
 		</ul>
@@ -47,7 +46,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Sep 11, 2017 06:47:06 PM</span>
+                    <span class='label suite-start-time blue darken-3'>Sep 11, 2017 08:37:58 PM</span>
 				</a>
 			</li>
 			<li>
@@ -73,7 +72,6 @@
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
 											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
-						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -134,10 +132,10 @@
 					<canvas id='parent-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> feature(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> feature(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='100%'>1</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -149,10 +147,10 @@
 					<canvas id='child-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> scenario(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> scenario(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='100%'>1</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -164,10 +162,10 @@
 					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='75%'><span class='strong'>3</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>4</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='25%'>1</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -181,18 +179,18 @@
 			<ul id='test-collection' class='test-collection'>
 				
 				
-				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='1'>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>Submit Meter Read for Anonymous Read</span>
-						<span class='test-time'>Sep 11, 2017 06:47:06 PM</span>
-						<span class='test-status right fail'>fail</span>
+						<span class='test-time'>Sep 11, 2017 08:37:58 PM</span>
+						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
-<div class='scenario node' test-id='2' status='fail'>
+<div class='scenario node' test-id='2' status='pass'>
 	<div class='category-list'>
 		<span class='category label white-text'>@MultiRegister</span>
 	</div>
-	<span class='duration right label'>0h 13m 24s+795ms</span>
+	<span class='duration right label'>0h 0m 49s+623ms</span>
 	<div class='desc'>
 		<b>Scenario</b>
 		<span class="desc-text">To validate that if the customer is getting meter read deatils when giving valid deatils for Multiple Registers</span>
@@ -204,7 +202,7 @@
 			
 			<span class="bdd-step-name">Given I should navigate to the SMR page</span>
 			<ul class='screenshots right'>
-				<li><a data-featherlight="image" href="C:\Users\473415\git\Lift and Shift New/test-output/20170911_184706/Screenshots/SMR Home Page.png"><i class='material-icons'>panorama</i></a></li>
+				<li><a data-featherlight="image" href="C:\Users\473415\git\Lift and Shift New/test-output/20170911_203758/Screenshots/SMR Home Page.png"><i class='material-icons'>panorama</i></a></li>
 			</ul>
 				<div class='pre'>passed</div>
 			
@@ -215,7 +213,7 @@
 			
 			<span class="bdd-step-name">When I should enter the account number as "600712768" ,postcode as "EX33 2BJ" and email address as "shobanbabasdeu.manohar@cognizant.com"</span>
 			<ul class='screenshots right'>
-				<li><a data-featherlight="image" href="C:\Users\473415\git\Lift and Shift New/test-output/20170911_184706/Screenshots/Submit Meter Details Entered.png"><i class='material-icons'>panorama</i></a></li>
+				<li><a data-featherlight="image" href="C:\Users\473415\git\Lift and Shift New/test-output/20170911_203758/Screenshots/Submit Meter Details Entered.png"><i class='material-icons'>panorama</i></a></li>
 			</ul>
 				<div class='pre'>Submit Meter read Page Title is matched with String</div>
 				<div class='pre'>Email ID entered successfully</div>
@@ -232,7 +230,7 @@
 			
 			<span class="bdd-step-name">Then I should verify UI of meter deatils</span>
 			<ul class='screenshots right'>
-				<li><a data-featherlight="image" href="C:\Users\473415\git\Lift and Shift New/test-output/20170911_184706/Screenshots/SMR Home Meter Details page Step 2.png"><i class='material-icons'>panorama</i></a></li>
+				<li><a data-featherlight="image" href="C:\Users\473415\git\Lift and Shift New/test-output/20170911_203758/Screenshots/SMR Home Meter Details page Step 2.png"><i class='material-icons'>panorama</i></a></li>
 			</ul>
 				<div class='pre'>Step Two Details is displayed successfully in the application</div>
 				<div class='pre'>Account number: 600712768  is Displayed SuccessFully</div>
@@ -242,40 +240,29 @@
 				<div class='pre'>passed</div>
 			
 		</li>
-		<li test-id='6' class='node then fail' status='fail'>
+		<li test-id='6' class='node then pass' status='pass'>
 			
 			<b>Then</b>
 			
 			<span class="bdd-step-name">Then I should submit the meter for Multiple Registers</span>
+			<ul class='screenshots right'>
+				<li><a data-featherlight="image" href="C:\Users\473415\git\Lift and Shift New/test-output/20170911_203758/Screenshots/SMR Meter Deatils Submitted.png"><i class='material-icons'>panorama</i></a></li>
+			</ul>
 				<div class='pre'>Date Picker clicked successfully</div>
 				<div class='pre'>8 Dials are displayed in the application</div>
 				<div class='pre'>8  Input dials are displayed in the application</div>
 				<div class='pre'>Previous Meter Read for Register 1 is:00557805</div>
 				<div class='pre'>Updated Meter Read for Register 1 is00557806</div>
 				<div class='pre'>Dials count and Input Dials are matched</div>
-				<div class='pre'><pre>org.openqa.selenium.NoSuchWindowException: Unable to get browser
-Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:55:29.867Z'
-System info: host: 'PC354424', ip: '10.27.101.145', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_131'
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities [{acceptInsecureCerts=false, browserVersion=11, se:ieOptions={nativeEvents=true, browserAttachTimeout=0, ie.ensureCleanSession=false, elementScrollBehavior=0, enablePersistentHover=true, ie.browserCommandLineSwitches=, ie.forceCreateProcessApi=false, requireWindowFocus=false, initialBrowserUrl=http://localhost:34961/, ignoreZoomSetting=false, ie.fileUploadDialogTimeout=3000, ignoreProtectedModeSettings=false}, browserName=internet explorer, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss, javascriptEnabled=true, platformName=XP, setWindowRect=true, platform=XP}]
-Session ID: 2a08f893-3b1b-42ce-9585-ca7b3ce85780
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:646)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:703)
-	at org.openqa.selenium.ie.InternetExplorerDriver.getScreenshotAs(InternetExplorerDriver.java:217)
-	at bgb.CommonProperties.BasePage.VerifyAndTakeScreenshot(BasePage.java:218)
-	at bgb.Service.Page.SubmitMeterReadPage.get_meter_multi_register_count(SubmitMeterReadPage.java:293)
-	at bgb.Service.StepDefenition.SubmitMeterReadStep.Submit_meter_read_MultipleRegister(SubmitMeterReadStep.java:117)
-	at ?.Then I should submit the meter for Multiple Registers(Feature_File/SubmitMeterRead.feature:58)
-</pre></div>
+				<div class='pre'>8  Input dials are displayed in the application</div>
+				<div class='pre'>Previous Meter Read for Register 2 is:00285722</div>
+				<div class='pre'>Updated Meter Read for Register 2 is00285723</div>
+				<div class='pre'>Dials count and Input Dials are matched</div>
+				<div class='pre'>8  Input dials are displayed in the application</div>
+				<div class='pre'>Previous Meter Read for Register 3 is:00491051</div>
+				<div class='pre'>Updated Meter Read for Register 3 is00491052</div>
+				<div class='pre'>Dials count and Input Dials are matched</div>
+				<div class='pre'>passed</div>
 			
 		</li>
 	</ul>
@@ -336,13 +323,13 @@ Session ID: 2a08f893-3b1b-42ce-9585-ca7b3ce85780
 					<div class='category-heading'>
 						<span class='category-name'>@MultiRegister</span>
 						<span class='category-status right'>
-							<span class='label fail'>1</span>
+							<span class='label pass'>1</span>
 						</span>
 					</div>
 					<div class='category-content hide'>
 						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
 							
-							<span class='label red lighten-1 white-text'>Failed: 1</span>
 							
 						</div>
 					
@@ -357,9 +344,9 @@ Session ID: 2a08f893-3b1b-42ce-9585-ca7b3ce85780
 								</thead>
 								<tbody>
 									<tr>
-										<td>Sep 11, 2017 06:47:06 PM</td>
+										<td>Sep 11, 2017 08:37:58 PM</td>
 										<td class='linked' test-id='2'>Submit Meter Read for Anonymous Read.To validate that if the customer is getting meter read deatils when giving valid deatils for Multiple Registers</td>
-										<td><span class='test-status fail'>fail</span></td>
+										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -378,89 +365,6 @@ Session ID: 2a08f893-3b1b-42ce-9585-ca7b3ce85780
 	</div>
 </div>
 <!-- category view -->
-<div id='exception-view' class='view hide'>
-
-    <section id='controls'>
-        <div class='controls grey lighten-4'>
-            <!-- search -->
-            <div class='chip transparent' alt='Search Tests' title='Search Tests'>
-                <a href="#" class='search-div'>
-                    <i class='material-icons'>search</i> Search
-                </a>
-
-                <div class='input-field left hide'>
-                    <input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
-                </div>
-
-            </div>
-            <!-- search -->
-        </div>
-    </section>
-
-    <div class='subview-left left'>
-
-        <div class='view-summary'>
-            <h5>Exceptions</h3>
-                <ul id='exception-collection' class='exception-collection'>
-
-                        <li class='exception displayed active'>
-                            <div class='exception-heading'>
-                                <span class='exception-name'>org.openqa.selenium.NoSuchWindowException</span>
-                                <span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
-                            </div>
-                            <div class='exception-content hide'>
-                                <div class='exception-tests'>
-                                    <table class='bordered table-results'>
-                                        <thead>
-                                        <tr>
-                                            <th>Timestamp</th>
-                                            <th>TestName</th>
-                                            <th>Status</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                                    <tr>
-                                                        <td>Sep 11, 2017 06:53:53 PM</td>
-                                                        <td class='linked' test-id='6'>Submit Meter Read for Anonymous Read.To validate that if the customer is getting meter read deatils when giving valid deatils for Multiple Registers.Then I should submit the meter for Multiple Registers</td>
-                                                        <td><pre><pre>org.openqa.selenium.NoSuchWindowException: Unable to get browser
-Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:55:29.867Z'
-System info: host: 'PC354424', ip: '10.27.101.145', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_131'
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities [{acceptInsecureCerts=false, browserVersion=11, se:ieOptions={nativeEvents=true, browserAttachTimeout=0, ie.ensureCleanSession=false, elementScrollBehavior=0, enablePersistentHover=true, ie.browserCommandLineSwitches=, ie.forceCreateProcessApi=false, requireWindowFocus=false, initialBrowserUrl=http://localhost:34961/, ignoreZoomSetting=false, ie.fileUploadDialogTimeout=3000, ignoreProtectedModeSettings=false}, browserName=internet explorer, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss, javascriptEnabled=true, platformName=XP, setWindowRect=true, platform=XP}]
-Session ID: 2a08f893-3b1b-42ce-9585-ca7b3ce85780
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:646)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:703)
-	at org.openqa.selenium.ie.InternetExplorerDriver.getScreenshotAs(InternetExplorerDriver.java:217)
-	at bgb.CommonProperties.BasePage.VerifyAndTakeScreenshot(BasePage.java:218)
-	at bgb.Service.Page.SubmitMeterReadPage.get_meter_multi_register_count(SubmitMeterReadPage.java:293)
-	at bgb.Service.StepDefenition.SubmitMeterReadStep.Submit_meter_read_MultipleRegister(SubmitMeterReadStep.java:117)
-	at ?.Then I should submit the meter for Multiple Registers(Feature_File/SubmitMeterRead.feature:58)
-</pre></pre></td>
-                                                    </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </li>
-                </ul>
-        </div>
-    </div>
-
-    <div class='subview-right left'>
-        <div class='view-summary'>
-            <h5 class='exception-name'></h5>
-        </div>
-    </div>
-</div>
 <!-- exception view -->
 <div id='dashboard-view' class='view hide'>
 	<div class='card-panel transparent np-v'>
@@ -488,19 +392,19 @@ Session ID: 2a08f893-3b1b-42ce-9585-ca7b3ce85780
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Sep 11, 2017 06:47:06 PM</div>
+					<div class='panel-lead'>Sep 11, 2017 08:37:58 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Sep 11, 2017 07:00:31 PM</div>
+			 		<div class='panel-lead'>Sep 11, 2017 08:38:48 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>804,952ms</div>
+					<div class='panel-lead'>50,071ms</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -530,7 +434,7 @@ Session ID: 2a08f893-3b1b-42ce-9585-ca7b3ce85780
 							</tr>
 							<tr>
 								<td>Browser</td>
-								<td>ie</td>
+								<td>chrome</td>
 							</tr>
 							<tr>
 								<td>JAVA</td>
@@ -556,8 +460,8 @@ Session ID: 2a08f893-3b1b-42ce-9585-ca7b3ce85780
 						</tr>
 						<tr>
 							<td>@MultiRegister</td>
-							<td>0</td>
 							<td>1</td>
+							<td>0</td>
 							<td>0</td>
 						</tr>
 					</table>
@@ -582,31 +486,31 @@ Session ID: 2a08f893-3b1b-42ce-9585-ca7b3ce85780
 
 		<script>
 			var statusGroup = {
-				passParent: 0,
-				failParent: 1,
+				passParent: 1,
+				failParent: 0,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
 				skipParent: 0,
-				exceptionsParent: 1,
+				exceptionsParent: 0,
 				
-				passChild: 0,
-				failChild: 1,
+				passChild: 1,
+				failChild: 0,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
 				skipChild: 0,
 				infoChild: 0,
-				exceptionsChild: 1,
+				exceptionsChild: 0,
 				
-				passGrandChild: 3,
-				failGrandChild: 1,
+				passGrandChild: 4,
+				failGrandChild: 0,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,
 				warningGrandChild: 0,
 				skipGrandChild: 0,
 				infoGrandChild: 0,
-				exceptionsGrandChild: 1,
+				exceptionsGrandChild: 0,
 			};
 		</script>
 		

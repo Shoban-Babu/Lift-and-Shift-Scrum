@@ -9,7 +9,6 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
 import Listener.Reporter;
-
 import bgb.CommonProperties.BasePage;
 import bgb.CommonProperties.PropertyLoader;
 

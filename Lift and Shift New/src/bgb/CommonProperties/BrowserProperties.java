@@ -31,7 +31,6 @@ public class BrowserProperties extends BasePage{
 				dc.setCapability("marionette", true);
 				browser =new FirefoxDriver(dc);
 				browser_operations();
-				browser.get(pageProperties.getProperty("Common.BGBURL"));
 			}
 			
 			else if(pageProperties.getProperty("Common.browser").equalsIgnoreCase("Chrome"))
@@ -39,13 +38,12 @@ public class BrowserProperties extends BasePage{
 				System.setProperty("webdriver.chrome.driver", "D://FireFox - Selenium Add -Ons//Drivers//chromedriver.exe");
 				browser =new ChromeDriver();
 				browser_operations();
-				browser.get(pageProperties.getProperty("Common.BGBURL"));
 			}
 			
 			else if(pageProperties.getProperty("Common.browser").equalsIgnoreCase("IE"))
 			{
 				System.setProperty("webdriver.ie.driver", "D://FireFox - Selenium Add -Ons//Drivers//IEDriverServer.exe");
-/*				DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
+                /*DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
 		        capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);*/
 		        
 		        /*DesiredCapabilities ieCapabilities = DesiredCapabilities.internetExplorer();
@@ -53,7 +51,7 @@ public class BrowserProperties extends BasePage{
 				
 				browser =new InternetExplorerDriver();
 				browser_operations();
-				browser.get(pageProperties.getProperty("Common.BGBURL"));
+				
 				browser.findElement(By.id("overridelink")).click();
 			}
 		}
@@ -63,5 +61,18 @@ public class BrowserProperties extends BasePage{
 	{
 		browser.manage().window().maximize();
 		browser.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);		
+		browser.get(pageProperties.getProperty("Common.BGBURL"));
+		browserWait(1500);
+		/*try
+		{*/
+			if(browser.findElement(By.xpath(".//*[@class='fa fa-close']")).isDisplayed())
+				{
+			browser.findElement(By.xpath(".//*[@class='fa fa-close']")).click();
+				}
+		/*}
+		catch(Exception e)
+		{
+			
+		}*/
 	}
 }

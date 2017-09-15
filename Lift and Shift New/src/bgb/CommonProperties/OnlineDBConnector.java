@@ -37,7 +37,7 @@ public class OnlineDBConnector {
     
     public String[] getAuditEventTypeId(String date,String emailId, String type) {
         jdbcTemplate = new SimpleJdbcTemplate(getDataSource());
-        String strQuery = "Select AUDIT_EVENT_TYPE_ID,AUDTI_DATA from bg_business_ta_audit_details where EMAIL_ADDRESS = '"+ emailId +"' AND AUDIT_TIMESTAMP > to_Date('"
+        String strQuery = "Select AUDIT_EVENT_TYPE_ID,AUDTI_DATA from bg_business_ta_audit_details where EMAIL_ADDRESS = '"+emailId +"' AND AUDIT_TIMESTAMP > to_Date('"
                 + date + "','dd-mm-yy-hh24.mi.ss') and AUDTI_DATA like '%"+type+"%' and rownum=1";
         //String strQuery = "Select EMAIL_ADDRESS from bg_business_ta_audit_details where EMAIL_ADDRESS = '"+ emailId +"' and rownum=1";
         System.out.println(strQuery); 
