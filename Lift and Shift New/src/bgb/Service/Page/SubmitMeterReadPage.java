@@ -17,7 +17,7 @@ public class SubmitMeterReadPage extends BasePage
 {
 	private final static String File_Get = "BGB/CommonProperties/Dev.properties";
 	private static Properties pageProperties = new PropertyLoader(File_Get).load();
-	
+
 	private final static String File_load = "BGB/Service/Properties/SubmitMeterReadPageProperties";
 	private static Properties SMRproperties = new PropertyLoader(File_load).load();
 
@@ -29,7 +29,6 @@ public class SubmitMeterReadPage extends BasePage
 	int loop;
 	int count;
 	String Temp;
-	
 	
 	
 	public void Click_SMR_Link()
