@@ -25,10 +25,12 @@ public class SubmitMeterReadPage extends BasePage
 	int register;
 	int m=1;
 	int tagcount;
-	int temp;
+	int temp,cal=5,number = 5,rows,column;
 	int loop;
 	int count;
 	String Temp;
+	
+	
 	
 	public void Click_SMR_Link()
 	{
@@ -45,7 +47,7 @@ public class SubmitMeterReadPage extends BasePage
 	
 	public void navigate_to_SMR() throws IOException
 	{
-		browser.get(pageProperties.getProperty("Common.BGBURL")+"/business/meter-read/business-submit-meter-read");
+		browser.get(pageProperties.getProperty("Common.BGBURL")+"/business/account/submitreading");
 		VerifyAndTakeScreenshot("SMR Home Page");
 	}
 	
@@ -105,7 +107,7 @@ public class SubmitMeterReadPage extends BasePage
 	public void verify_meter_details_page() throws IOException
 	{
 		browserWait(3000);
-		verifyIsElementVisibleWithId(SMRproperties.getProperty("SMR.step2"),"Step Two Details");
+		verifyIsElementVisibleWithXpath(SMRproperties.getProperty("SMR.step2"),"Step Two Details");
 		verifyAndGetTextByXpath(SMRproperties.getProperty("SMR.Accountnumber"));
 		verifyAndGetTextByXpath(SMRproperties.getProperty("SMR.MeterSerialNumber"));
 		verifyAndGetTextByXpath(SMRproperties.getProperty("SMR.EstimationDate"));
@@ -138,29 +140,14 @@ public class SubmitMeterReadPage extends BasePage
 			calender_Funtions();
 		}
 		
-		public void Date_Picker_Fuctionality_MultiMeter()
-		{
-			loop = loop +1;
-			browserWait(2000);
-			System.out.println(loop);
-			verifyAndClickwithXpath(SMRproperties.getProperty("SMR.DatePickermultiMeter").replaceAll("num", ""+loop),"Date Picker");
-			browserWait(1000);
-			Assert.assertTrue(browser.findElement(By.xpath(SMRproperties.getProperty("SMR.PrevoiusMonth"))).isDisplayed());
-			for(int y=0;y<=3;y++)
-			{
-				browser.findElement(By.xpath(SMRproperties.getProperty("SMR.PrevoiusMonth"))).click();
-			}
-			browserWait(2000);
-			calender_Funtions();
-		    loop = loop-1;
-		}
+		
 		
   // Date picker using rows and columns
 		public void calender_Funtions()
 		{
-			int rows = VerifyAndGetTableRows(SMRproperties.getProperty("SMR.DateTableCount"));
+			rows = VerifyAndGetTableRows(SMRproperties.getProperty("SMR.DateTableCount"));
 			System.out.println("rows ="+rows);
-			int column = VerifyAndGetTableColumns(SMRproperties.getProperty("SMR.DateTableCount"));
+			column = VerifyAndGetTableColumns(SMRproperties.getProperty("SMR.DateTableCount"));
 			System.out.println("columns ="+column);
 			
 			try
@@ -172,14 +159,19 @@ public class SubmitMeterReadPage extends BasePage
 					browser.findElement(By.xpath("//*[@class='pika-lendar']/table/tbody/tr["+row+"]/td["+col+"]")).click();
 					browserWait(500);
 				}
+			
 			}
 			}
+		
 			catch(Exception e)
 			{
 				
 			}
+			
+			
 		}
 	
+		
 	public int get_meter_dials_Count()
 	{
 		text = VerifyAndGetCountWithXpath(SMRproperties.getProperty("SMR.Dialscount")," Dials are displayed in the application");
@@ -250,7 +242,6 @@ public class SubmitMeterReadPage extends BasePage
 	}
 	
 	//get meter reading from existing meter
-	
 	public String get_meter_multi_register_count() throws IOException
 	{
 		new_register_count();
@@ -271,7 +262,7 @@ public class SubmitMeterReadPage extends BasePage
 		    
 		 {
 		  	//System.out.println("i am in for second loop");
-			String meter = browser.findElement(By.xpath("//*[@id='meter-read']/div[2]/div/div[3]/div/div/div/div/div["+m+"]//*[@class='meter-register']/div/div//input[@data-test-dial='"+i+"']")).getAttribute("value");
+			String meter = browser.findElement(By.xpath("//*[@class='meter-read']/div[2]/div/div[3]/div/div/div/div/div["+m+"]//*[@class='meter-register']/div/div//input[@data-test-dial='"+i+"']")).getAttribute("value");
 			concatmeterread = concatmeterread.concat(meter);
 			System.out.println("Meter read value:"+meter);
 			
@@ -389,7 +380,10 @@ public class SubmitMeterReadPage extends BasePage
 		previousmeterread = (Integer.parseInt(previousmeterread)+1)+"";
 		previousmeterread = pad_Zeros(previousmeterread, DialsCount);
 		System.out.println("Updated meter read:"+previousmeterread);
+		
 		int update = previousmeterread.length();
+		Reporter.addStepLog("Previous Meter Read for Register "+m+ " is:" +Temp);
+		Reporter.addStepLog("Updated Meter Read for Register " +m+ " is"+ previousmeterread);
 		Assert.assertEquals(DialsCount, update);
 		
 			for(int i=0;i<DialsCount;i++)
@@ -402,6 +396,50 @@ public class SubmitMeterReadPage extends BasePage
 				browser.findElement(By.xpath(concat)).sendKeys(previousmeterread.substring(i));
 			}
 		
+	}
+	
+	public void Date_Picker_Fuctionality_MultiMeter()
+	{
+		
+		browserWait(2000);
+		verifyAndClickwithXpathJS(SMRproperties.getProperty("SMR.DatePickermultiMeter").replaceAll("num", ""+cal),"Date Picker");
+		browserWait(1000);
+		Assert.assertTrue(browser.findElement(By.xpath(SMRproperties.getProperty("SMR.PreviousDatePickermulti").replaceAll("calnum", ""+number))).isDisplayed());
+		for(int y=0;y<=3;y++)
+		{
+			browser.findElement(By.xpath(SMRproperties.getProperty("SMR.PreviousDatePickermulti").replaceAll("calnum", ""+number))).click();
+		}
+		browserWait(2000);
+		calender_Funtions_multi();
+		cal = cal + 4;
+		number++;
+		
+	}
+	
+	public void calender_Funtions_multi()
+	{
+		rows = VerifyAndGetTableRows(SMRproperties.getProperty("SMR.DatePickerMultiCount").replaceAll("calnum", ""+number));
+		System.out.println("rows ="+rows);
+		column = VerifyAndGetTableColumns(SMRproperties.getProperty("SMR.DatePickerMultiCount").replaceAll("calnum", ""+number));
+		System.out.println("columns ="+column);
+		
+		try
+		{
+		for(int row=1;row<=rows;row++)
+		{
+			for(int col=1;col<=column;col++)
+			{
+				browser.findElement(By.xpath("//body[@class='ember-application']/div[" +number+ "]/div/table/tbody/tr["+row+"]/td["+col+"]")).click();
+				browserWait(500);
+			}
+			
+		}
+		rows = 0;
+		column = 0;
+		}			
+		catch(Exception e)
+		{
+		}
 		
 	}
 	

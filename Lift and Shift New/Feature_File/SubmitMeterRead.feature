@@ -39,7 +39,7 @@ Given I should navigate to the SMR page
 When I should enter the account number as "600783a" ,postcode as " 2AF" and email address as "shobanbabasdeu.manoharcognizant.com"
 Then I should verify UI error message with invalid deatils
 
-@singleRegister
+@singleRegister @Regression
 
 Scenario: To validate that if the customer is getting meter read deatils when giving valid deatils for Single Registers
 
@@ -48,7 +48,7 @@ When I should enter the account number as "602028090" ,postcode as "PL5 1QY" and
 Then I should verify UI of meter deatils
 Then I should submit the meter read for Single Registers
 
-@MultiRegister
+@MultiRegister @Regression
 
 Scenario: To validate that if the customer is getting meter read deatils when giving valid deatils for Multiple Registers
 
@@ -57,7 +57,7 @@ When I should enter the account number as "600712768" ,postcode as "EX33 2BJ" an
 Then I should verify UI of meter deatils
 Then I should submit the meter for Multiple Registers
 
-@Multimeter
+@Multimeter @Regression
 
 Scenario: To validate that if the customer is getting meter read deatils when giving valid deatils for Multiple Meters
 

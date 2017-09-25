@@ -124,7 +124,6 @@ public class SubmitMeterReadStep{
 	{
 		
 	SubmitMeterReadPage smr = new SubmitMeterReadPage();
-	smr.Date_Picker_Fuctionality();
 	smr.get_Dialscount_multimeter();		
 	
 	}

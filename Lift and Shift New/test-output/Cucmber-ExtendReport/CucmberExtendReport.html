@@ -46,7 +46,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Sep 11, 2017 08:37:58 PM</span>
+                    <span class='label suite-start-time blue darken-3'>Sep 25, 2017 12:18:07 PM</span>
 				</a>
 			</li>
 			<li>
@@ -84,7 +84,8 @@
 					<i class='material-icons'>local_offer</i> Category
 				</a>
 				<ul id='category-toggle' class='dropdown-content'>
-					<li><a href='#'>@MultiRegister</a></li>
+					<li><a href='#'>@Multimeter</a></li>
+					<li><a href='#'>@Regression</a></li>
 					<li class='divider'></li>
 					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
 				</ul>
@@ -182,18 +183,19 @@
 				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>Submit Meter Read for Anonymous Read</span>
-						<span class='test-time'>Sep 11, 2017 08:37:58 PM</span>
+						<span class='test-time'>Sep 25, 2017 12:18:07 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='scenario node' test-id='2' status='pass'>
 	<div class='category-list'>
-		<span class='category label white-text'>@MultiRegister</span>
+		<span class='category label white-text'>@Multimeter</span>
+		<span class='category label white-text'>@Regression</span>
 	</div>
-	<span class='duration right label'>0h 0m 49s+623ms</span>
+	<span class='duration right label'>0h 0m 48s+92ms</span>
 	<div class='desc'>
 		<b>Scenario</b>
-		<span class="desc-text">To validate that if the customer is getting meter read deatils when giving valid deatils for Multiple Registers</span>
+		<span class="desc-text">To validate that if the customer is getting meter read deatils when giving valid deatils for Multiple Meters</span>
 	</div>
 	<ul class='steps'>
 		<li test-id='3' class='node given pass' status='pass'>
@@ -202,7 +204,7 @@
 			
 			<span class="bdd-step-name">Given I should navigate to the SMR page</span>
 			<ul class='screenshots right'>
-				<li><a data-featherlight="image" href="C:\Users\473415\git\Lift and Shift New/test-output/20170911_203758/Screenshots/SMR Home Page.png"><i class='material-icons'>panorama</i></a></li>
+				<li><a data-featherlight="image" href="C:\Users\473415\git\Lift and Shift New/test-output/20170925_121807/Screenshots/SMR Home Page.png"><i class='material-icons'>panorama</i></a></li>
 			</ul>
 				<div class='pre'>passed</div>
 			
@@ -211,9 +213,9 @@
 			
 			<b>When</b>
 			
-			<span class="bdd-step-name">When I should enter the account number as "600712768" ,postcode as "EX33 2BJ" and email address as "shobanbabasdeu.manohar@cognizant.com"</span>
+			<span class="bdd-step-name">When I should enter the account number as "600596676" ,postcode as "NE38 8QB" and email address as "shobanbabasdeu.manohar@cognizant.com"</span>
 			<ul class='screenshots right'>
-				<li><a data-featherlight="image" href="C:\Users\473415\git\Lift and Shift New/test-output/20170911_203758/Screenshots/Submit Meter Details Entered.png"><i class='material-icons'>panorama</i></a></li>
+				<li><a data-featherlight="image" href="C:\Users\473415\git\Lift and Shift New/test-output/20170925_121807/Screenshots/Submit Meter Details Entered.png"><i class='material-icons'>panorama</i></a></li>
 			</ul>
 				<div class='pre'>Submit Meter read Page Title is matched with String</div>
 				<div class='pre'>Email ID entered successfully</div>
@@ -230,12 +232,12 @@
 			
 			<span class="bdd-step-name">Then I should verify UI of meter deatils</span>
 			<ul class='screenshots right'>
-				<li><a data-featherlight="image" href="C:\Users\473415\git\Lift and Shift New/test-output/20170911_203758/Screenshots/SMR Home Meter Details page Step 2.png"><i class='material-icons'>panorama</i></a></li>
+				<li><a data-featherlight="image" href="C:\Users\473415\git\Lift and Shift New/test-output/20170925_121807/Screenshots/SMR Home Meter Details page Step 2.png"><i class='material-icons'>panorama</i></a></li>
 			</ul>
 				<div class='pre'>Step Two Details is displayed successfully in the application</div>
-				<div class='pre'>Account number: 600712768  is Displayed SuccessFully</div>
-				<div class='pre'>Meter serial number: E06BG11813  is Displayed SuccessFully</div>
-				<div class='pre'>Estimated reading on 01 December 2016  is Displayed SuccessFully</div>
+				<div class='pre'>Account number: 600596676  is Displayed SuccessFully</div>
+				<div class='pre'>Meter serial number: E14Z027742  is Displayed SuccessFully</div>
+				<div class='pre'>Actual reading on 24 December 2016  is Displayed SuccessFully</div>
 				<div class='pre'>DatePicker is displayed successfully in the application</div>
 				<div class='pre'>passed</div>
 			
@@ -244,24 +246,25 @@
 			
 			<b>Then</b>
 			
-			<span class="bdd-step-name">Then I should submit the meter for Multiple Registers</span>
+			<span class="bdd-step-name">Then I should submit the meter for Multiple Meter</span>
 			<ul class='screenshots right'>
-				<li><a data-featherlight="image" href="C:\Users\473415\git\Lift and Shift New/test-output/20170911_203758/Screenshots/SMR Meter Deatils Submitted.png"><i class='material-icons'>panorama</i></a></li>
+				<li><a data-featherlight="image" href="C:\Users\473415\git\Lift and Shift New/test-output/20170925_121807/Screenshots/SMR Meter Deatils Submitted.png"><i class='material-icons'>panorama</i></a></li>
 			</ul>
+				<div class='pre'>6Dials Count</div>
 				<div class='pre'>Date Picker clicked successfully</div>
-				<div class='pre'>8 Dials are displayed in the application</div>
-				<div class='pre'>8  Input dials are displayed in the application</div>
-				<div class='pre'>Previous Meter Read for Register 1 is:00557805</div>
-				<div class='pre'>Updated Meter Read for Register 1 is00557806</div>
-				<div class='pre'>Dials count and Input Dials are matched</div>
-				<div class='pre'>8  Input dials are displayed in the application</div>
-				<div class='pre'>Previous Meter Read for Register 2 is:00285722</div>
-				<div class='pre'>Updated Meter Read for Register 2 is00285723</div>
-				<div class='pre'>Dials count and Input Dials are matched</div>
-				<div class='pre'>8  Input dials are displayed in the application</div>
-				<div class='pre'>Previous Meter Read for Register 3 is:00491051</div>
-				<div class='pre'>Updated Meter Read for Register 3 is00491052</div>
-				<div class='pre'>Dials count and Input Dials are matched</div>
+				<div class='pre'>6Dials Count</div>
+				<div class='pre'>Previous Meter Read for Register 1 is:991634</div>
+				<div class='pre'>Updated Meter Read for Register 1 is991635</div>
+				<div class='pre'>6Dials Count</div>
+				<div class='pre'>Date Picker clicked successfully</div>
+				<div class='pre'>6Dials Count</div>
+				<div class='pre'>Previous Meter Read for Register 1 is:999240</div>
+				<div class='pre'>Updated Meter Read for Register 1 is999241</div>
+				<div class='pre'>6Dials Count</div>
+				<div class='pre'>Date Picker clicked successfully</div>
+				<div class='pre'>6Dials Count</div>
+				<div class='pre'>Previous Meter Read for Register 1 is:999610</div>
+				<div class='pre'>Updated Meter Read for Register 1 is999611</div>
 				<div class='pre'>passed</div>
 			
 		</li>
@@ -321,7 +324,7 @@
 				
 				<li class='category displayed active'>
 					<div class='category-heading'>
-						<span class='category-name'>@MultiRegister</span>
+						<span class='category-name'>@Multimeter</span>
 						<span class='category-status right'>
 							<span class='label pass'>1</span>
 						</span>
@@ -344,8 +347,42 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Sep 11, 2017 08:37:58 PM</td>
-										<td class='linked' test-id='2'>Submit Meter Read for Anonymous Read.To validate that if the customer is getting meter read deatils when giving valid deatils for Multiple Registers</td>
+										<td>Sep 25, 2017 12:18:07 PM</td>
+										<td class='linked' test-id='2'>Submit Meter Read for Anonymous Read.To validate that if the customer is getting meter read deatils when giving valid deatils for Multiple Meters</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@Regression</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Sep 25, 2017 12:18:07 PM</td>
+										<td class='linked' test-id='2'>Submit Meter Read for Anonymous Read.To validate that if the customer is getting meter read deatils when giving valid deatils for Multiple Meters</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 								</tbody>
@@ -392,19 +429,19 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Sep 11, 2017 08:37:58 PM</div>
+					<div class='panel-lead'>Sep 25, 2017 12:18:07 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Sep 11, 2017 08:38:48 PM</div>
+			 		<div class='panel-lead'>Sep 25, 2017 12:18:55 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>50,071ms</div>
+					<div class='panel-lead'>48,324ms</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -459,7 +496,13 @@
 							<th>Others</th>
 						</tr>
 						<tr>
-							<td>@MultiRegister</td>
+							<td>@Multimeter</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td>@Regression</td>
 							<td>1</td>
 							<td>0</td>
 							<td>0</td>

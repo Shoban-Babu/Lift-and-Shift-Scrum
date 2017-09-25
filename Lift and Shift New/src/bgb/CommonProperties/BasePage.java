@@ -9,6 +9,7 @@ import java.util.Calendar;
 import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -50,6 +51,27 @@ public class BasePage {
 			
 		}
 	}
+	
+	public void verifyAndClickwithXpathJS(String value,String message)
+	{
+		WebElement Element;		
+		Element = browser.findElement(By.xpath(value));
+		
+		if(Element.isDisplayed())
+		{
+			
+			JavascriptExecutor executor = (JavascriptExecutor)browser;
+			executor.executeScript("arguments[0].click();", Element);
+			Reporter.addStepLog(message+ " clicked successfully");
+		}
+		
+		else
+		{
+			Reporter.addStepLog(message+ " not clicked");
+			
+		}
+	}
+	
 	
 	public void verifyAndClickwithid(String value,String message)
 	{

@@ -1,5 +1,5 @@
 SMR.Link = .//*[@href="/business/oam-submit-meter-read?contractAccountNumber=600560823"]
-SMR.SMRheading = .//*[@id='meter-read']/div/h2
+SMR.SMRheading = .//*[@class='meter-read']/div/h2
 SMR.EmailId = email
 SMR.AccountNumber = accountNo
 SMR.PostCode = postcode
@@ -7,7 +7,7 @@ SMR.Nextbutton = .//*[@class='account-detail container']//button[@type='button']
 SMR.Emailerrormessage = .//*[@name="email"]/following::div[1]
 SMR.accountnoerrormessage = .//*[@name="accountNo"]/following::div[1]
 SMR.postcodeerrormessage = .//*[@name="postcode"]/following::div[1]
-SMR.step2 = step2
+SMR.step2 = .//strong[text()="Step 2:"]
 SMR.Accountnumber = //*[@class="justify-content-center"]//following::p[1]
 SMR.MeterSerialNumber = //*[@class="justify-content-center"]//following::p[2]
 SMR.EstimationDate = //*[@class="justify-content-center"]//following::p[3]
@@ -16,36 +16,38 @@ SMR.PrevoiusMonth = //*[@ class="pika-prev"]
 SMR.NextMonth = //*[@ class="pika-next"]
 SMR.DateTableCount = //*[@class="pika-lendar"]
 
-SMR.Dialscount = .//*[@id="meter-read"]/div[2]/div/div[3]/div/div/div/div/div[4]//*[@class='meter-register']//*[@class='row']/div
-SMR.DialsInputCount = .//*[@id="meter-read"]/div[2]/div/div[3]/div/div/div/div/div[6]//*[@class='meter-register']//*[@class='row']/div
-SMR.DialsInputCount1 = .//*[@id="meter-read"]/div[2]/div/div[3]/div/div/div/div/div[6]//*[@class='meter-register']/div/div//input[@data-test-dial='num']
+SMR.Dialscount = .//*[@class="meter-read"]/div[2]/div/div[3]/div/div/div/div/div[4]//*[@class='meter-register']//*[@class='row']/div
+SMR.DialsInputCount = .//*[@class="meter-read"]/div[2]/div/div[3]/div/div/div/div/div[6]//*[@class='meter-register']//*[@class='row']/div
+SMR.DialsInputCount1 = .//*[@class="meter-read"]/div[2]/div/div[3]/div/div/div/div/div[6]//*[@class='meter-register']/div/div//input[@data-test-dial='num']
 
 #TakeRegisterCount
-SMR.DialsCountmultiRegister = .//*[@id="meter-read"]/div[2]/div/div[3]/div/div/div/div/div[reg]/div
-SMR.RegisterCount = .//*[@id="meter-read"]/div[2]/div/div[3]/div/div/div/div/div[reg]//div[@class="p-1"]
+SMR.DialsCountmultiRegister = .//*[@class="meter-read"]/div[2]/div/div[3]/div/div/div/div/div[reg]/div
+SMR.RegisterCount = .//*[@class="meter-read"]/div[2]/div/div[3]/div/div/div/div/div[reg]//div[@class="p-1"]
 
 #Multi Register Previous meter read dials
-SMR.DialsCountforMultiReg = .//*[@id="meter-read"]/div[2]/div/div[3]/div/div/div/div/div[4]//*[@class='meter-register']//*[@class='row']/div
+SMR.DialsCountforMultiReg = .//*[@class="meter-read"]/div[2]/div/div[3]/div/div/div/div/div[4]//*[@class='meter-register']//*[@class='row']/div
 
 #######InputDialsCount
-SMR.InputDialsforMultiMeter1 = .//*[@id="meter-read"]/div[2]/div/div[3]/div/div/div/div/div[reg]
+SMR.InputDialsforMultiMeter1 = .//*[@class="meter-read"]/div[2]/div/div[3]/div/div/div/div/div[reg]
 SMR.InputDialsforMultiMeter2 = /div[count]//*[@class='ember-view']/div/div/div
 
 #InputDialsintovalues
 
-#SMR.DialsInputCount1 = .//*[@id="meter-read"]/div[2]/div/div[3]/div/div/div/div/div[7]/div[1]//*[@class='ember-view']//*[@data-test-dial='num']
-SMR.InputValuesPart1 = .//*[@id="meter-read"]/div[2]/div/div[3]/div/div/div/div/div[count]/div
+#SMR.DialsInputCount1 = .//*[@class="meter-read"]/div[2]/div/div[3]/div/div/div/div/div[7]/div[1]//*[@class='ember-view']//*[@data-test-dial='num']
+SMR.InputValuesPart1 = .//*[@class="meter-read"]/div[2]/div/div[3]/div/div/div/div/div[count]/div
 SMR.InputValuesPart2 = //*[@class='ember-view']//*[@data-test-dial='num']
 
 #MultiMeter
-SMR.MultiMeterRegisterpreviousMeter = //*[@id='meter-read']/div[2]/div/div[3]/div/div/div/div/div[4]//*[@class='meter-register']/div/div//*[@data-test-dial='num']
+SMR.MultiMeterRegisterpreviousMeter = //*[@class='meter-read']/div[2]/div/div[3]/div/div/div/div/div[4]//*[@class='meter-register']/div/div//*[@data-test-dial='num']
 
-SMR.MultiMeterRegisterpreviousMeter1 = //*[@id='meter-read']/div[2]/div/div[3]/div/div/div/div/div[tag]
+SMR.MultiMeterRegisterpreviousMeter1 = //*[@class='meter-read']/div[2]/div/div[3]/div/div/div/div/div[tag]
 SMR.MultiMeterRegisterpreviousMeter2 = //*[@class='meter-register']/div/div//*[@data-test-dial='num']
 
-SMR.MultiMeterReadCount = .//*[@id="meter-read"]/div[2]/div/div[3]/div/div/div/div/div[Dcount]//*[@class='meter-register']//*[@class='row']/div
+SMR.MultiMeterReadCount = .//*[@class="meter-read"]/div[2]/div/div[3]/div/div/div/div/div[Dcount]//*[@class='meter-register']//*[@class='row']/div
 
-SMR.multiMeterInputReadCount = //*[@id='meter-read']/div[2]/div/div[3]/div/div/div/div/div[Dcount]//*[@class='meter-register']/div/div
-SMR.multiMterInputValues1 = //*[@id='meter-read']/div[2]/div/div[3]/div/div/div/div/div[tag]
+SMR.multiMeterInputReadCount = //*[@class='meter-read']/div[2]/div/div[3]/div/div/div/div/div[Dcount]//*[@class='meter-register']/div/div
+SMR.multiMterInputValues1 = //*[@class='meter-read']/div[2]/div/div[3]/div/div/div/div/div[tag]
 SMR.multiMterInputValues2 = //*[@class='meter-register']/div/div//input[@data-test-dial='num']
 SMR.DatePickermultiMeter = //div[num][@class="row m-0"]/input
+SMR.PreviousDatePickermulti = //body[@class='ember-application']/div[calnum]//div[@class="pika-title"]/button[1]
+SMR.DatePickerMultiCount = //body[@class='ember-application']/div[calnum]/div
